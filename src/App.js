@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import WriteCommentContainer from "./containers/WriteCommentContainer";
+import CommentsContainer from "./containers/CommentsContainer";
 
 function App() {
   return (
     <ContentBlock>
       <WriteCommentContainer />
+      <CommentsContainer />
     </ContentBlock>
   );
 }

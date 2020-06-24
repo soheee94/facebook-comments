@@ -21,3 +21,12 @@ code {
   align-items: center;
   height: 100vh;
 }
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+  list-style: none;
+}
