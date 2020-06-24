@@ -67,7 +67,7 @@ const CommentText = styled.div`
 `;
 
 const CommentActions = styled.ul`
-  padding: 10px 12px 9px 12px;
+  padding: 5px 0px 5px 12px;
   display: flex;
   color: ${palette.gray};
 
