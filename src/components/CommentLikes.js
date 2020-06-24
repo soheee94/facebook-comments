@@ -15,10 +15,12 @@ function CommentLikes({ count }) {
 const CommentLikeBlock = styled.div`
   background: white;
   display: flex;
+  align-items: center;
   position: absolute;
   border-radius: 1rem;
   box-shadow: 0 1px 2px #ccc;
   right: 0.5rem;
+  bottom: -0.5rem;
   padding: 0.125rem 0.25rem 0.125rem 0.125rem;
   color: ${palette.gray};
   img {
