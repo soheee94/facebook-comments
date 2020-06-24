@@ -69,9 +69,10 @@ const CommentText = styled.div`
 const CommentActions = styled.ul`
   padding: 10px 12px 9px 12px;
   display: flex;
+  color: ${palette.gray};
 
   li {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
 
     &:not(:last-of-type):after {
       content: "·";
@@ -80,6 +81,7 @@ const CommentActions = styled.ul`
   }
 
   span {
+    font-weight: bold;
     cursor: pointer;
     &:hover {
       text-decoration: underline;
