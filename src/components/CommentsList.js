@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import CommentItem from "./CommentItem";
-import palette from "../palette";
 
 function CommentsList({ comments }) {
   return (
