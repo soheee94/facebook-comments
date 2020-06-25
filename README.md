@@ -1,12 +1,13 @@
 # facebook-comments
 
-Website link :
+link : https://soheee94.github.io/facebook-comments/
 
 ## Project Stack
 
 - React
 - Redux
 - styled-components
+- localStorage
 
 ## 기능 소개
 
@@ -25,17 +26,17 @@ Website link :
 
 ### 댓글 좋아요
 
-- 좋아요 텍스트 클릭
+- 좋아요 클릭
   ![likeComment](/images/likeComment.gif?raw=true)
 
 ### 댓글 삭제
 
-- 삭제 텍스트 클릭
+- 삭제 클릭
   ![deleteComment](/images/deleteComment.gif?raw=true)
 
 ### 댓글의 답글
 
-- 답글 달기 텍스트 클릭하여 댓글 작성 후 엔터
+- 답글 달기 클릭하여 댓글 작성 후 엔터
   ![replyComment](/images/replyComment.gif?raw=true)
 
 - 댓글 삭제 시, 댓글의 답글도 삭제
