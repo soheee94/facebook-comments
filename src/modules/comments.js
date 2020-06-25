@@ -6,6 +6,7 @@ const WRITE_COMMENT = "WRITE_COMMENT";
 // 댓글 좋아요
 const LIKE_COMMENT = "LIKE_COMMENT";
 // 댓글 삭제
+const REMOVE_COMMENT = "REMOVE_COMMENT";
 // 댓글의 답글 작성
 
 // 초기 상태
@@ -21,7 +22,11 @@ export const writeComment = data => ({
 });
 export const likeComment = id => ({
   type: LIKE_COMMENT,
-  payload: id
+  id
+});
+export const removeComment = id => ({
+  type: REMOVE_COMMENT,
+  id
 });
 
 export default function comments(state = initialState, action) {
@@ -31,7 +36,9 @@ export default function comments(state = initialState, action) {
     case WRITE_COMMENT:
       return state.concat(action.payload);
     case LIKE_COMMENT:
-      return state.map(comment => (comment.id === action.payload ? { ...comment, like_count: comment.like_count + 1 } : comment));
+      return state.map(comment => (comment.id === action.id ? { ...comment, like_count: comment.like_count + 1 } : comment));
+    case REMOVE_COMMENT:
+      return state.filter(comment => comment.id !== action.id);
     default:
       return state;
   }

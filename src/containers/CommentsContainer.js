@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CommentsList from "../components/CommentsList";
-import { getComments, likeComment } from "../modules/comments";
+import { getComments, likeComment, removeComment } from "../modules/comments";
 
 function CommentsContainer() {
   const dispatch = useDispatch();
@@ -17,7 +17,12 @@ function CommentsContainer() {
     dispatch(likeComment(id));
   };
 
-  return <CommentsList comments={comments} onClickLike={onClickLike} />;
+  // 댓글 삭제
+  const onRemove = id => {
+    dispatch(removeComment(id));
+  };
+
+  return <CommentsList comments={comments} onClickLike={onClickLike} onRemove={onRemove} />;
 }
 
 export default CommentsContainer;
