@@ -30,7 +30,7 @@ function CommentItem({ comment, onClickLike, onRemove }) {
           </li>
           <li>{created_at}</li>
         </CommentActions>
-        {open && <WriteCommentContainer id={id} />}
+        {open && <WriteCommentContainer id={id} setOpen={setOpen} />}
         <CommentRepliesContainer id={id} />
       </CommentContent>
     </CommentItemBlock>

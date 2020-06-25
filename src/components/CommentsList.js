@@ -13,7 +13,7 @@ function CommentsList({ comments, onClickLike, onRemove }) {
 }
 
 const CommentsListBlock = styled.ul`
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
 `;
 
 export default CommentsList;

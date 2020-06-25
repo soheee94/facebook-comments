@@ -6,8 +6,8 @@ import CommentsContainer from "./containers/CommentsContainer";
 function App() {
   return (
     <ContentBlock>
-      <WriteCommentContainer />
       <CommentsContainer />
+      <WriteCommentContainer />
     </ContentBlock>
   );
 }
