@@ -4,6 +4,7 @@ const GET_COMMENTS = "GET_COMMENTS";
 // 댓글 작성
 const WRITE_COMMENT = "WRITE_COMMENT";
 // 댓글 좋아요
+const LIKE_COMMENT = "LIKE_COMMENT";
 // 댓글 삭제
 // 댓글의 답글 작성
 
@@ -18,6 +19,10 @@ export const writeComment = data => ({
   type: WRITE_COMMENT,
   payload: data
 });
+export const likeComment = id => ({
+  type: LIKE_COMMENT,
+  payload: id
+});
 
 export default function comments(state = initialState, action) {
   switch (action.type) {
@@ -25,6 +30,8 @@ export default function comments(state = initialState, action) {
       return JSON.parse(localStorage.getItem("comments")) || [];
     case WRITE_COMMENT:
       return state.concat(action.payload);
+    case LIKE_COMMENT:
+      return state.map(comment => (comment.id === action.payload ? { ...comment, like_count: comment.like_count + 1 } : comment));
     default:
       return state;
   }

@@ -4,8 +4,8 @@ import palette from "../palette";
 import CommentLikes from "./CommentLikes";
 import CommentsList from "./CommentsList";
 
-function CommentItem({ comment }) {
-  const { user, created_at, text, like_count, replies } = comment;
+function CommentItem({ comment, onClickLike }) {
+  const { id, user, created_at, text, like_count, replies } = comment;
   return (
     <CommentItemBlock>
       <UserImage></UserImage>
@@ -17,7 +17,7 @@ function CommentItem({ comment }) {
         </CommentText>
         <CommentActions>
           <li>
-            <span>좋아요</span>
+            <span onClick={() => onClickLike(id)}>좋아요</span>
           </li>
           <li>
             <span>답글 달기</span>

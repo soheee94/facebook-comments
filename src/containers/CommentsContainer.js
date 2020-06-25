@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CommentsList from "../components/CommentsList";
-import { getComments } from "../modules/comments";
+import { getComments, likeComment } from "../modules/comments";
 
 function CommentsContainer() {
   const dispatch = useDispatch();
@@ -12,7 +12,12 @@ function CommentsContainer() {
     dispatch(getComments());
   }, [dispatch]);
 
-  return <CommentsList comments={comments} />;
+  // 댓글 좋아요
+  const onClickLike = id => {
+    dispatch(likeComment(id));
+  };
+
+  return <CommentsList comments={comments} onClickLike={onClickLike} />;
 }
 
 export default CommentsContainer;
