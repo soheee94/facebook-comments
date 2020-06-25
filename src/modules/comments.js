@@ -1,3 +1,5 @@
+import { loadState } from "../localStorage";
+
 // 액션 타입
 // 댓글 리스트
 const GET_COMMENTS = "GET_COMMENTS";
@@ -7,7 +9,6 @@ const WRITE_COMMENT = "WRITE_COMMENT";
 const LIKE_COMMENT = "LIKE_COMMENT";
 // 댓글 삭제
 const REMOVE_COMMENT = "REMOVE_COMMENT";
-// 댓글의 답글 작성
 
 // 초기 상태
 const initialState = [];
@@ -29,10 +30,11 @@ export const removeComment = id => ({
   id
 });
 
+// 리듀서
 export default function comments(state = initialState, action) {
   switch (action.type) {
     case GET_COMMENTS:
-      return JSON.parse(localStorage.getItem("comments")) || [];
+      return loadState();
     case WRITE_COMMENT:
       return state.concat(action.payload);
     case LIKE_COMMENT:

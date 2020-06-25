@@ -16,7 +16,7 @@ function WriteComment({ onWrite }) {
       text: comment,
       created_at: Date.now(),
       like_count: 0,
-      replies: []
+      comment_id: null
     };
     onWrite(data);
   };

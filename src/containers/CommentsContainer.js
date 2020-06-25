@@ -5,7 +5,7 @@ import { getComments, likeComment, removeComment } from "../modules/comments";
 
 function CommentsContainer() {
   const dispatch = useDispatch();
-  const comments = useSelector(state => state);
+  const parentComments = useSelector(state => state).filter(comment => !comment.comment_id);
 
   // 댓글리스트 가져오기
   useEffect(() => {
@@ -22,7 +22,7 @@ function CommentsContainer() {
     dispatch(removeComment(id));
   };
 
-  return <CommentsList comments={comments} onClickLike={onClickLike} onRemove={onRemove} />;
+  return <CommentsList comments={parentComments} onClickLike={onClickLike} onRemove={onRemove} />;
 }
 
 export default CommentsContainer;
