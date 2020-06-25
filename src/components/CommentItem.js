@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import palette from "../palette";
-import CommentLikes from "./CommentLikes";
-import CommentRepliesContainer from "../containers/CommentRepliesContainer";
-import WriteCommentContainer from "../containers/WriteCommentContainer";
-import { formatDate } from "../utils";
-import userIcon from "../assets/user.jpg";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import palette from '../palette';
+import CommentLikes from './CommentLikes';
+import CommentRepliesContainer from '../containers/CommentRepliesContainer';
+import WriteCommentContainer from '../containers/WriteCommentContainer';
+import { formatDate } from '../utils';
+import userIcon from '../assets/user.jpg';
 
 function CommentItem({ comment, onClickLike, onRemove }) {
   const { id, user, created_at, text, like_count } = comment;
@@ -27,7 +27,7 @@ function CommentItem({ comment, onClickLike, onRemove }) {
             <span onClick={() => onClickLike(id)}>좋아요</span>
           </li>
           <li>
-            <span onClick={() => setOpen(!open)}>답글 달기</span>
+            <span onClick={() => setOpen(!open)}>{open ? '답글 작성 숨기기' : '답글 작성'}</span>
           </li>
           <li>
             <span onClick={() => onRemove(id)}>삭제</span>
@@ -87,7 +87,7 @@ const CommentActions = styled.ul`
     font-size: 0.75rem;
 
     &:not(:last-of-type):after {
-      content: "·";
+      content: '·';
       margin: 0 0.25rem;
     }
   }
