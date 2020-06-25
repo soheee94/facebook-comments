@@ -4,6 +4,7 @@ import palette from "../palette";
 import CommentLikes from "./CommentLikes";
 import CommentRepliesContainer from "../containers/CommentRepliesContainer";
 import WriteCommentContainer from "../containers/WriteCommentContainer";
+import { formatDate } from "../utils";
 
 function CommentItem({ comment, onClickLike, onRemove }) {
   const { id, user, created_at, text, like_count } = comment;
@@ -28,7 +29,8 @@ function CommentItem({ comment, onClickLike, onRemove }) {
           <li>
             <span onClick={() => onRemove(id)}>삭제</span>
           </li>
-          <li>{created_at}</li>
+
+          <li>{formatDate(created_at)}</li>
         </CommentActions>
         {open && <WriteCommentContainer id={id} setOpen={setOpen} />}
         <CommentRepliesContainer id={id} />
