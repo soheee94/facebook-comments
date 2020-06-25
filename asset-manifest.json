@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/facebook-comments/static/css/main.758e65de.chunk.css",
-    "main.js": "/facebook-comments/static/js/main.0edf5343.chunk.js",
-    "main.js.map": "/facebook-comments/static/js/main.0edf5343.chunk.js.map",
+    "main.js": "/facebook-comments/static/js/main.53d88933.chunk.js",
+    "main.js.map": "/facebook-comments/static/js/main.53d88933.chunk.js.map",
     "runtime-main.js": "/facebook-comments/static/js/runtime-main.d38d8c11.js",
     "runtime-main.js.map": "/facebook-comments/static/js/runtime-main.d38d8c11.js.map",
     "static/js/2.1a6cff24.chunk.js": "/facebook-comments/static/js/2.1a6cff24.chunk.js",
     "static/js/2.1a6cff24.chunk.js.map": "/facebook-comments/static/js/2.1a6cff24.chunk.js.map",
     "index.html": "/facebook-comments/index.html",
-    "precache-manifest.3c75bce20b2d0ef404a7d12f9696924d.js": "/facebook-comments/precache-manifest.3c75bce20b2d0ef404a7d12f9696924d.js",
+    "precache-manifest.6a55b5325c5b83f2439d486ede3ebae8.js": "/facebook-comments/precache-manifest.6a55b5325c5b83f2439d486ede3ebae8.js",
     "service-worker.js": "/facebook-comments/service-worker.js",
     "static/css/main.758e65de.chunk.css.map": "/facebook-comments/static/css/main.758e65de.chunk.css.map",
     "static/js/2.1a6cff24.chunk.js.LICENSE.txt": "/facebook-comments/static/js/2.1a6cff24.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d38d8c11.js",
     "static/js/2.1a6cff24.chunk.js",
     "static/css/main.758e65de.chunk.css",
-    "static/js/main.0edf5343.chunk.js"
+    "static/js/main.53d88933.chunk.js"
   ]
 }
