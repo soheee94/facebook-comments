@@ -1,34 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import CommentsList from "../components/CommentsList";
+import { getComments } from "../modules/comments";
 
 function CommentsContainer() {
-  const comments = [
-    {
-      id: 1,
-      user: "테스터",
-      created_at: "2020-06-24",
-      text: "댓글을 작성해보아요",
-      like_count: 11,
-      replies: [
-        {
-          id: 22,
-          user: "테스터",
-          created_at: "2020-06-24",
-          text: "댓글의 답글을 작성해보아요",
-          like_count: 11,
-          replies: []
-        }
-      ]
-    },
-    {
-      id: 333,
-      user: "박미나",
-      created_at: "2020-06-24",
-      text: "댓글을 작성해보아요",
-      like_count: 11,
-      replies: []
-    }
-  ];
+  const dispatch = useDispatch();
+  const comments = useSelector(state => state);
+
+  // 댓글리스트 가져오기
+  useEffect(() => {
+    dispatch(getComments());
+  }, [dispatch]);
+
   return <CommentsList comments={comments} />;
 }
 
