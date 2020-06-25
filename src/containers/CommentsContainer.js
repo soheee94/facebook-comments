@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CommentsList from "../components/CommentsList";
 import { getComments, likeComment, removeComment } from "../modules/comments";
+import styled from "styled-components";
 
 function CommentsContainer() {
   const dispatch = useDispatch();
@@ -22,7 +23,23 @@ function CommentsContainer() {
     dispatch(removeComment(id));
   };
 
-  return <CommentsList comments={parentComments} onClickLike={onClickLike} onRemove={onRemove} />;
+  return (
+    <>
+      {parentComments.length > 0 ? (
+        <CommentsList comments={parentComments} onClickLike={onClickLike} onRemove={onRemove} />
+      ) : (
+        <NoComments>댓글이 없습니다.</NoComments>
+      )}
+    </>
+  );
 }
+
+const NoComments = styled.div`
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+`;
 
 export default CommentsContainer;

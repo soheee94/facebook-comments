@@ -13,7 +13,8 @@ function CommentsList({ comments, onClickLike, onRemove }) {
 }
 
 const CommentsListBlock = styled.ul`
-  /* padding-top: 1rem; */
+  flex: 1;
+  overflow-y: auto;
 `;
 
 export default CommentsList;
