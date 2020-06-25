@@ -101,4 +101,4 @@ const CommentActions = styled.ul`
   }
 `;
 
-export default CommentItem;
+export default React.memo(CommentItem);

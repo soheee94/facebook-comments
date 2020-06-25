@@ -64,4 +64,4 @@ const Input = styled.input`
   }
 `;
 
-export default WriteComment;
+export default React.memo(WriteComment);
