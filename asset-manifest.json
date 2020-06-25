@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/facebook-comments/static/css/main.758e65de.chunk.css",
+    "main.js": "/facebook-comments/static/js/main.605ff202.chunk.js",
+    "main.js.map": "/facebook-comments/static/js/main.605ff202.chunk.js.map",
+    "runtime-main.js": "/facebook-comments/static/js/runtime-main.d38d8c11.js",
+    "runtime-main.js.map": "/facebook-comments/static/js/runtime-main.d38d8c11.js.map",
+    "static/js/2.1a6cff24.chunk.js": "/facebook-comments/static/js/2.1a6cff24.chunk.js",
+    "static/js/2.1a6cff24.chunk.js.map": "/facebook-comments/static/js/2.1a6cff24.chunk.js.map",
+    "index.html": "/facebook-comments/index.html",
+    "precache-manifest.a401be2cb5e0813e2115693bbd67714b.js": "/facebook-comments/precache-manifest.a401be2cb5e0813e2115693bbd67714b.js",
+    "service-worker.js": "/facebook-comments/service-worker.js",
+    "static/css/main.758e65de.chunk.css.map": "/facebook-comments/static/css/main.758e65de.chunk.css.map",
+    "static/js/2.1a6cff24.chunk.js.LICENSE.txt": "/facebook-comments/static/js/2.1a6cff24.chunk.js.LICENSE.txt",
+    "static/media/like.png": "/facebook-comments/static/media/like.ba9c9cc7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d38d8c11.js",
+    "static/js/2.1a6cff24.chunk.js",
+    "static/css/main.758e65de.chunk.css",
+    "static/js/main.605ff202.chunk.js"
+  ]
+}
