@@ -5,6 +5,7 @@ import CommentLikes from "./CommentLikes";
 import CommentRepliesContainer from "../containers/CommentRepliesContainer";
 import WriteCommentContainer from "../containers/WriteCommentContainer";
 import { formatDate } from "../utils";
+import userIcon from "../assets/user.jpg";
 
 function CommentItem({ comment, onClickLike, onRemove }) {
   const { id, user, created_at, text, like_count } = comment;
@@ -12,7 +13,9 @@ function CommentItem({ comment, onClickLike, onRemove }) {
 
   return (
     <CommentItemBlock>
-      <UserImage></UserImage>
+      <UserImage>
+        <img src={userIcon} alt="유저 아이콘" />
+      </UserImage>
       <CommentContent>
         <CommentText>
           <p>{user}</p>
@@ -40,7 +43,7 @@ function CommentItem({ comment, onClickLike, onRemove }) {
 
 const CommentItemBlock = styled.li`
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 0.875rem;
 
   &:last-of-type {
@@ -49,11 +52,15 @@ const CommentItemBlock = styled.li`
 `;
 
 const UserImage = styled.div`
-  background: gray;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
   margin-right: 0.5rem;
+  overflow: hidden;
+
+  img {
+    width: 2rem;
+  }
 `;
 
 const CommentContent = styled.div`
