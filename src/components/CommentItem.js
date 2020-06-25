@@ -29,7 +29,6 @@ function CommentItem({ comment, onClickLike, onRemove }) {
           <li>
             <span onClick={() => onRemove(id)}>삭제</span>
           </li>
-
           <li>{formatDate(created_at)}</li>
         </CommentActions>
         {open && <WriteCommentContainer id={id} setOpen={setOpen} />}
