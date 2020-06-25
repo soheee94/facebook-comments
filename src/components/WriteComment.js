@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import palette from "../palette";
-import { generateRandomID } from "../utils";
 
 function WriteComment({ onWrite }) {
   const [user, setUser] = useState("");
@@ -10,15 +9,13 @@ function WriteComment({ onWrite }) {
   const onSubmit = e => {
     // 새로고침 방지
     e.preventDefault();
-    const data = {
-      id: generateRandomID(),
-      user: user,
-      text: comment,
-      created_at: Date.now(),
-      like_count: 0,
-      comment_id: null
-    };
-    onWrite(data);
+    onWrite({
+      user,
+      comment
+    });
+    // Input 초기화
+    setUser("");
+    setComment("");
   };
 
   return (
@@ -33,12 +30,16 @@ function WriteComment({ onWrite }) {
         width="100%"
         required
       />
-      <input type="submit" />
+      <input type="submit" style={{ display: "none" }} />
     </WriteCommentForm>
   );
 }
 
-const WriteCommentForm = styled.form``;
+const WriteCommentForm = styled.form`
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+`;
 
 const Input = styled.input`
   background: ${palette.lightGray};
