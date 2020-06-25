@@ -21,7 +21,7 @@ function CommentRepliesContainer({ id }) {
     }
   };
 
-  return <CommentsList comments={replyComments} onClickLike={onClickLike} onRemove={onRemove} />;
+  return <>{replyComments.length > 0 && <CommentsList comments={replyComments} onClickLike={onClickLike} onRemove={onRemove} />}</>;
 }
 
 export default CommentRepliesContainer;
