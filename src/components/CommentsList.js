@@ -15,7 +15,7 @@ function CommentsList({ comments, onClickLike, onRemove }) {
 const CommentsListBlock = styled.ul`
   flex: 1;
   overflow-y: auto;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   margin: 0;
 `;
 
