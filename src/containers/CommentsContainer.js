@@ -20,7 +20,10 @@ function CommentsContainer() {
 
   // 댓글 삭제
   const onRemove = id => {
-    dispatch(removeComment(id));
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm("댓글을 삭제하시겠습니까?")) {
+      dispatch(removeComment(id));
+    }
   };
 
   return (
