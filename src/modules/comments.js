@@ -15,19 +15,19 @@ const initialState = [];
 
 // 액션 생성 함수
 export const getComments = () => ({
-  type: GET_COMMENTS
+  type: GET_COMMENTS,
 });
 export const writeComment = data => ({
   type: WRITE_COMMENT,
-  payload: data
+  payload: data,
 });
 export const likeComment = id => ({
   type: LIKE_COMMENT,
-  id
+  id,
 });
 export const removeComment = id => ({
   type: REMOVE_COMMENT,
-  id
+  id,
 });
 
 // 리듀서
@@ -38,9 +38,11 @@ export default function comments(state = initialState, action) {
     case WRITE_COMMENT:
       return state.concat(action.payload);
     case LIKE_COMMENT:
-      return state.map(comment => (comment.id === action.id ? { ...comment, like_count: comment.like_count + 1 } : comment));
+      return state.map(comment =>
+        comment.id === action.id ? { ...comment, like_count: comment.like_count + 1 } : comment
+      );
     case REMOVE_COMMENT:
-      return state.filter(comment => comment.id !== action.id);
+      return state.filter(comment => comment.id !== action.id && comment.comment_id !== action.id);
     default:
       return state;
   }
