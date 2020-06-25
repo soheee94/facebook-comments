@@ -9,8 +9,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from "redux-thunk";
 import comments from "./modules/comments";
 import { Provider } from "react-redux";
+import { loadState, saveState } from "./localStorage";
 
 const store = createStore(comments, composeWithDevTools(applyMiddleware(ReduxThunk, logger)));
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 ReactDOM.render(
   <Provider store={store}>
