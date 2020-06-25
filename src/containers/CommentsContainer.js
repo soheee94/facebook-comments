@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CommentsList from "../components/CommentsList";
-import { getComments, likeComment, removeComment } from "../modules/comments";
+import { getComments } from "../modules/comments";
 import styled from "styled-components";
 
 function CommentsContainer() {
@@ -13,28 +13,7 @@ function CommentsContainer() {
     dispatch(getComments());
   }, [dispatch]);
 
-  // 댓글 좋아요
-  const onClickLike = id => {
-    dispatch(likeComment(id));
-  };
-
-  // 댓글 삭제
-  const onRemove = id => {
-    // eslint-disable-next-line no-restricted-globals
-    if (confirm("댓글을 삭제하시겠습니까?")) {
-      dispatch(removeComment(id));
-    }
-  };
-
-  return (
-    <>
-      {parentComments.length > 0 ? (
-        <CommentsList comments={parentComments} onClickLike={onClickLike} onRemove={onRemove} />
-      ) : (
-        <NoComments>댓글이 없습니다.</NoComments>
-      )}
-    </>
-  );
+  return <>{parentComments.length > 0 ? <CommentsList comments={parentComments} /> : <NoComments>댓글이 없습니다.</NoComments>}</>;
 }
 
 const NoComments = styled.div`
