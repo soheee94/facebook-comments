@@ -7,17 +7,17 @@ import styled from "styled-components";
 function CommentsContainer() {
   const dispatch = useDispatch();
   const comments = useSelector(state => state);
-  const parentComments = comments && comments.filter(comment => !comment.comment_id);
+  const originComments = comments && comments.filter(comment => !comment.origin_comment_id);
 
   // 댓글리스트 가져오기
   useEffect(() => {
     dispatch(getComments());
   }, [dispatch]);
 
-  if (!parentComments || parentComments.length === 0) {
+  if (!originComments || originComments.length === 0) {
     return <NoComments>댓글이 없습니다.</NoComments>;
   }
-  return <CommentsList comments={parentComments} />;
+  return <CommentsList comments={originComments} />;
 }
 
 const NoComments = styled.div`

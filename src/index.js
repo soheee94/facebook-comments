@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
 import logger from "redux-logger";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { composeWithDevTools } from "redux-devtools-extension"; // 리덕스 개발자 도구
 import ReduxThunk from "redux-thunk";
 import comments from "./modules/comments";
 import { Provider } from "react-redux";
