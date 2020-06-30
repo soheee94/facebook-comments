@@ -4,7 +4,7 @@ import WriteComment from "../components/WriteComment";
 import { writeComment } from "../modules/comments";
 import { generateRandomID } from "../utils";
 
-function WriteCommentContainer({ id, setOpen }) {
+function WriteCommentContainer({ id, setWriteReplyCommentOpen }) {
   const dispatch = useDispatch();
 
   const onWrite = data => {
@@ -19,7 +19,7 @@ function WriteCommentContainer({ id, setOpen }) {
     };
     dispatch(writeComment(newComment));
     // 답글 달기일 경우 창 닫기
-    if (id) setOpen(false);
+    if (id) setWriteReplyCommentOpen(false);
   };
 
   return <WriteComment onWrite={onWrite} />;
