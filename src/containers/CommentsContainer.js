@@ -14,15 +14,10 @@ function CommentsContainer() {
     dispatch(getComments());
   }, [dispatch]);
 
-  return (
-    <>
-      {parentComments && parentComments.length > 0 ? (
-        <CommentsList comments={parentComments} />
-      ) : (
-        <NoComments>댓글이 없습니다.</NoComments>
-      )}
-    </>
-  );
+  if (!parentComments || parentComments.length === 0) {
+    return <NoComments>댓글이 없습니다.</NoComments>;
+  }
+  return <CommentsList comments={parentComments} />;
 }
 
 const NoComments = styled.div`
